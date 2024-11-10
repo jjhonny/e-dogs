@@ -1,12 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../Forms/Input";
 import Button from "../Forms/Button";
 
 const LoginForm = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
   function handleSubmit(event) {
     event.preventDefault();
     fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
@@ -14,7 +10,7 @@ const LoginForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify(),
     })
       .then((response) => {
         console.log(response);
